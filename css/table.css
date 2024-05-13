@@ -1,0 +1,26 @@
+table tr th {
+	background: #808000;
+	color: black;
+	text-align: center;
+	vertical-align: center;
+}
+
+td {
+	background: #F5F5F5;
+	border-right: 1px solid grey;
+	border-left: 1px solid grey;
+	border-top: 1px grey;
+	border-bottom: 3px solid grey;
+	padding: 10px 10px;
+	position: relative;
+	transition: all 300ms;
+}
+
+td:first-child {
+	box-shadow: inset 1px 0 0 #fff;
+}
+
+td:last-child {
+	border-right: 1px solid #e8e8e8;
+	box-shadow: inset -1px 0 0 #fff;
+}

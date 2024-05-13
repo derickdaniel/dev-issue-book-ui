@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 			if (response.length > 0) {
 				console.log(response);
-				var $data = $('<table id="mytable" border="1" cellspacing="0" cellpadding="3" width="1000"> </table>');
+				var $data = $('<table id="mytable" border="2" cellspacing="0" cellpadding="3" width="1200"> </table>');
 				var header = "<thead><tr><th>Seq.</th><th>Issue Type</th><th>Issue Description</th><th>Cause</th><th>Resolved</th><th>Resolution</th><th>Tags</th><th>Refs</th><th>Id</th><th>Action</th></tr></thead>";
 				$data.append(header);
 				$.each(response, function(i, row) {
@@ -42,10 +42,8 @@ $(document).ready(function() {
 					$row.append($('<td/>').html((row.id !== undefined && row.id !== '') ? row.id : 'NA'));
 
 
-					$editButton = $("<button class='editbtn' id='mybtn'>Edit</button>");
-					$row.append($editButton);
-					$deleteButton = $("<button class='deletebtn' id='delbtn'>Delete</button>");
-					$row.append($deleteButton);
+					$editDelButton = $("<td><button class='editbtn' id='mybtn'>Edit</button> <br><br> <button class='deletebtn' id='delbtn'>Delete</button></td>");
+					$row.append($editDelButton);
 					$data.append($row);
 				});
 				$("#MyDiv").empty();
