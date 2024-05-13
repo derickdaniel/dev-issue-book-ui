@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="css/base.css" />
+<title>Index Page</title>
+</head>
+
+<body>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<body>
+	<div class="main">
+	
+            <h2>Issue Registration</h2>
+            <form action="">
+                <label for="desc">Issue Description:</label>
+                <input type="text" id="desc" name="desc" required />
+ 
+                <label for="type">Issue Type:</label>
+                <select id="type" name="type" required>
+                    <option value="Code">
+                        Code
+                    </option>
+                    <option value="Configuration">
+                        Configuration
+                    </option>
+                    <option value="API Call">
+                        API Call
+                    </option>
+                    <option value="ui">
+                        UI
+                    </option>
+                    <option value=Other>
+                        Other
+                    </option>
+                </select>
+ 
+                <label for="rootCause">Root Cause:</label>
+                <input type="text" id="rootCause" name="rootCause" required />
+                
+			    <label style="display: inline-block">
+			    	<span style="vertical-align: middle"> 
+                		Resolved
+                	</span>
+			    	<input type="checkbox" id="resolved" name="resolved" />
+                </label>
+                <br><br>
+                
+                <label for="resolution">Resolution:</label>
+                <input type="text" id="resolution" name="resolution" required />
+ 
+                <label for="references:">References:</label>
+                <input type="text" id="references:" name="references:" maxlength="10" required />
+ 
+                <label for="tags">Tags:</label>
+                <input type="text" id="tags" name="tags" maxlength="10" required />
+ 
+                <button type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </body></body>
+
+
+</html>
