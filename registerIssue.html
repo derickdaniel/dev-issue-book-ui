@@ -6,20 +6,19 @@
 <title>Index Page</title>
 </head>
 
-<body>
-
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/createIssue.js"></script>
 
 <body>
 	<div class="main">
 	
             <h2>Issue Registration</h2>
-            <form action="">
-                <label for="desc">Issue Description:</label>
-                <input type="text" id="desc" name="desc" required />
+            <form action="" method="post" id="formId">
+                <label for="issueDesc">Issue Description:</label>
+                <input type="text" id="issueDesc" name="issueDesc" required />
  
-                <label for="type">Issue Type:</label>
-                <select id="type" name="type" required>
+                <label for="issueType">Issue Type:</label>
+                <select id="issueType" name="issueType" required>
                     <option value="Code">
                         Code
                     </option>
@@ -38,7 +37,7 @@
                 </select>
  
                 <label for="rootCause">Root Cause:</label>
-                <input type="text" id="rootCause" name="rootCause" required />
+                <input type="text" id="rootCause" name="rootCause" />
                 
 			    <label style="display: inline-block">
 			    	<span style="vertical-align: middle"> 
@@ -49,15 +48,15 @@
                 <br><br>
                 
                 <label for="resolution">Resolution:</label>
-                <input type="text" id="resolution" name="resolution" required />
+                <input type="text" id="resolution" name="resolution" />
  
-                <label for="references:">References:</label>
-                <input type="text" id="references:" name="references:" maxlength="10" required />
+                <label for="references">References:</label>
+                <input type="text" id="references" name="references" maxlength="10" />
  
                 <label for="tags">Tags:</label>
-                <input type="text" id="tags" name="tags" maxlength="10" required />
+                <input type="text" id="tags" name="tags" maxlength="10" />
  
-                <button type="submit">
+                <button id ="submitButton" type="submit">
                     Submit
                 </button>
             </form>

@@ -12,6 +12,7 @@ $(document).ready(function() {
 				$data.append(header);
 				$.each(response, function(i, row) {
 					var $row = $('<tr align="center"/>');
+
 					$row.append($('<td/>').html(i));
 					$hidden = $(' <input type="hidden" name="hid" value= "' + row.issueDesc + '">');
 					$row.append($hidden);
@@ -23,11 +24,13 @@ $(document).ready(function() {
 					$row.append($('<td/>').html((row.resolution !== undefined && row.resolution !== '') ? row.resolution : 'NA'));
 
 					var tags = "";
-					$.each(row.tags, function(i, tag) {
+					if (row.tags != undefined && row.tags.length > 0) {
+						$.each(row.tags, function(i, tag) {
 						tags += tag + ", ";
 					});
 					$row.append($('<td/>').html(tags));
-
+				    }
+				    
 
 					if (row.references != undefined && row.references.length > 0) {
 						let refs = [];
@@ -54,4 +57,19 @@ $(document).ready(function() {
 			}
 		}
 	});
+
+	/*	if ($('#staticTbl tr').length > 0) {
+	
+			//$('#input-1').trigger('change');
+		}*/
+
+	$("#staticTbl tr:gt(0)").each(function() {
+		$(this).find('input').trigger('change');
+		console.log("trigger");
+	});
+
 });
+
+function test(a) {
+
+}
