@@ -13,24 +13,35 @@ $(document).ready(function() {
 				$.each(response, function(i, row) {
 					var $row = $('<tr align="center"/>');
 
-					$row.append($('<td/>').html(i));
+					$row.append($('<td/>').html(++i));
 					$hidden = $(' <input type="hidden" name="hid" value= "' + row.issueDesc + '">');
 					$row.append($hidden);
 
 					$row.append($('<td/>').html((row.issueType !== undefined && row.issueType !== '') ? row.issueType : 'NA'));
 					$row.append($('<td/>').html((row.issueDesc !== undefined && row.issueDesc !== '') ? row.issueDesc : 'NA'));
 					$row.append($('<td/>').html((row.cause !== undefined && row.cause !== '') ? row.cause : 'NA'));
-					$row.append($('<td/>').html((row.resolved !== undefined && row.resolved !== '') ? row.resolved + "" : 'NA'));
+
+
+					if (row.resolved) {
+						$row.append($('<td/>').html('<input id="" type="checkbox" onclick="return false;" checked=checked class="tick"/>'));
+					} else {
+						$row.append($('<td/>').html('<input id="" type="checkbox" onclick="return false;" class="nontick"/>' + 
+						'<br><br><a href="https://www.google.com/search?q="'+ row.issueType + ">Google</a>"));
+					}
+
+
 					$row.append($('<td/>').html((row.resolution !== undefined && row.resolution !== '') ? row.resolution : 'NA'));
 
 					var tags = "";
 					if (row.tags != undefined && row.tags.length > 0) {
 						$.each(row.tags, function(i, tag) {
-						tags += tag + ", ";
-					});
-					$row.append($('<td/>').html(tags));
-				    }
-				    
+							tags += tag + ", ";
+						});
+						$row.append($('<td/>').html(tags));
+					} else {
+						$row.append($('<td/>').html("NA"));
+					}
+
 
 					if (row.references != undefined && row.references.length > 0) {
 						let refs = [];
@@ -61,15 +72,18 @@ $(document).ready(function() {
 	/*	if ($('#staticTbl tr').length > 0) {
 	
 			//$('#input-1').trigger('change');
-		}*/
+		}
 
 	$("#staticTbl tr:gt(0)").each(function() {
 		$(this).find('input').trigger('change');
 		console.log("trigger");
-	});
+	});*/
 
 });
 
-function test(a) {
-
+function checkBox(isResolved) {
+	$('#addCheckbox').click(function() {
+		var text = $('#newCheckText').val();
+		$('#checkboxes').append('<input type="checkbox" /> ' + text + '<br />');
+	});
 }

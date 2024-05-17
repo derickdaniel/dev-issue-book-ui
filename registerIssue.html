@@ -3,65 +3,50 @@
 
 <head>
 <link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/header.css" />
 <title>Index Page</title>
 </head>
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/createIssue.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/createIssue.js"></script>
 
 <body>
+	<div id="create" align="right">
+		<h1 align="left">Developer's Issue Book</h1>
+	</div>
 	<div class="main">
-	
-            <h2>Issue Registration</h2>
-            <form action="" method="post" id="formId">
-                <label for="issueDesc">Issue Description:</label>
-                <input type="text" id="issueDesc" name="issueDesc" required />
- 
-                <label for="issueType">Issue Type:</label>
-                <select id="issueType" name="issueType" required>
-                    <option value="Code">
-                        Code
-                    </option>
-                    <option value="Configuration">
-                        Configuration
-                    </option>
-                    <option value="API Call">
-                        API Call
-                    </option>
-                    <option value="ui">
-                        UI
-                    </option>
-                    <option value=Other>
-                        Other
-                    </option>
-                </select>
- 
-                <label for="rootCause">Root Cause:</label>
-                <input type="text" id="rootCause" name="rootCause" />
-                
-			    <label style="display: inline-block">
-			    	<span style="vertical-align: middle"> 
-                		Resolved
-                	</span>
-			    	<input type="checkbox" id="resolved" name="resolved" />
-                </label>
-                <br><br>
-                
-                <label for="resolution">Resolution:</label>
-                <input type="text" id="resolution" name="resolution" />
- 
-                <label for="references">References:</label>
-                <input type="text" id="references" name="references" maxlength="10" />
- 
-                <label for="tags">Tags:</label>
-                <input type="text" id="tags" name="tags" maxlength="10" />
- 
-                <button id ="submitButton" type="submit">
-                    Submit
-                </button>
-            </form>
-        </div>
-    </body></body>
+
+		<h2>Issue Registration</h2>
+		<form action="" method="post" id="formId">
+			<label for="issueDesc">Issue Description:</label> <input type="text"
+				id="issueDesc" name="issueDesc" required /> <label for="issueType">Issue
+				Type:</label> <select id="issueType" name="issueType" required>
+				<option value="Code">Code</option>
+				<option value="Configuration">Configuration</option>
+				<option value="API call">API call</option>
+				<option value="DataBase">DataBase</option>
+				<option value="Environment">Environment</option>
+				<option value="UI">UI</option>
+				<option value=Other>Other</option>
+			</select> <label for="rootCause">Root Cause:</label> <input type="text"
+				id="rootCause" name="rootCause" /> <label
+				style="display: inline-block"> <span
+				style="vertical-align: middle"> Resolved </span> <input
+				type="checkbox" id="resolved" name="resolved"/>
+			</label> <br> <br> <label for="resolution">Resolution:</label> <input
+				type="text" id="resolution" name="resolution" /> <label
+				for="references">References:</label> <input type="text"
+				id="references" name="references" /> <label for="tags">Tags:</label>
+			<input type="text" id="tags" name="tags" /> <br>
+			<br>
+			<div align="center">
+			<button id="submitButton" type="submit">Submit</button> &emsp; &emsp; &emsp; &emsp; &emsp;
+			<button id="backButton" type="submit" onclick="history.back()">Back</button>
+			</div>
+		</form>
+	</div>
+</body>
+</body>
 
 
 </html>

@@ -1,9 +1,9 @@
 body {
 	font-family: Arial, sans-serif;
 	background-color: #f3f3f3;
-	margin: 0;
-	padding: 0;
-	display: flex;
+	margin: 10;
+	padding: 10;
+	/*display: flex;*/
 	justify-content: left;
 	align-items: center;
 	height: 80vh;
@@ -41,11 +41,11 @@ input[type="text"], input[type="email"], input[type="password"], select
 
 button[type="submit"] {
 	padding: 10px;
-	border-radius: 5px;
+	border-radius: 10px;
 	border: none;
 	background-color: #808000;
 	color: white;
 	cursor: pointer;
-	width: 20%;
+	width: 30%;
 	font-size: 12px;
 }

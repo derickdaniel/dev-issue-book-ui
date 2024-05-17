@@ -9,11 +9,14 @@ $(document).ready(function() {
 		obj.issueType = $("#issueType").val();
 		obj.cause = $("#rootCause").val();
 		obj.resolution = $("#resolution").val();;
-		obj.resolved = $("#resolved").val();
-		obj.references = $("#references").val();
-		obj.tags = $("#tags").val();
-		var jsonData = JSON.stringify(obj);
+		
+		var isResolved = $("#resolved").is(":checked");
+		obj.resolved = isResolved;
+		console.log(obj.resolved);
+		obj.references = jsonArray($("#references").val());
+		obj.tags = jsonArray($("#tags").val());
 
+		var jsonData = JSON.stringify(obj);
 		console.log(jsonData);
 
 		$.ajax({
@@ -35,3 +38,15 @@ $(document).ready(function() {
 		});
 	});
 });
+
+
+function jsonArray(str) {
+	arr = [];
+	if (str.length > 1) {
+		var tagArr = str.split(',');
+		$.each(tagArr, function(index, value) {
+			arr[index] = value;
+		});
+	}
+	return arr;
+}
