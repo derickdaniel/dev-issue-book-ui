@@ -24,14 +24,3 @@ td:last-child {
 	border-right: 1px solid #e8e8e8;
 	box-shadow: inset -1px 0 0 #fff;
 }
-
-.tick {
-    accent-color: green;
-}
-
-.nontick {
-    background: red;
-    background-color: red;
-    color: red;
-    accent-color: red;
-}

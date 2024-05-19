@@ -8,20 +8,22 @@
 </head>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/editIssue.js"></script>
 <script type="text/javascript" src="js/commons.js"></script>
-<script type="text/javascript" src="js/createIssue.js"></script>
 
 <body>
 	<div id="create" align="right">
 		<h1 align="left">Developer's Issue Book</h1>
 	</div>
-	<div class="main" style="width:500px; margin:0 auto;">
+	<div class="main" style="width: 500px; margin: 0 auto;">
+		<h2>Edit Issue</h2>
+		<form action="" method="post" id="editFormId">
 
-		<h2>Issue Registration</h2>
-		<form action="" method="post" id="formId">
-			<label for="issueDesc">Issue Description:</label> <input type="text"
-				id="issueDesc" name="issueDesc" required /> <label for="issueType">Issue
-				Type:</label> <select id="issueType" name="issueType" required>
+			<label for="id">Id:</label> <input type="text" id="id" name="id"
+				readonly="readonly" /> <label for="issueDesc">Issue
+				Description:</label> <input type="text" id="issueDesc" name="issueDesc"
+				required /> <label for="issueType">Issue Type:</label> <select
+				id="issueType" name="issueType" required>
 				<option value="Code">Code</option>
 				<option value="Configuration">Configuration</option>
 				<option value="API call">API call</option>
@@ -33,16 +35,17 @@
 				id="rootCause" name="rootCause" /> <label
 				style="display: inline-block"> <span
 				style="vertical-align: middle"> Resolved </span> <input
-				type="checkbox" id="resolved" name="resolved" class="tick"/>
+				type="checkbox" id="resolved" name="resolved" class="tick" />
 			</label> <br> <br> <label for="resolution">Resolution:</label> <input
 				type="text" id="resolution" name="resolution" /> <label
 				for="references">References:</label> <input type="text"
 				id="references" name="references" /> <label for="tags">Tags:</label>
-			<input type="text" id="tags" name="tags" /> <br>
-			<br>
+			<input type="text" id="tags" name="tags" /> <br> <br>
 			<div align="center">
-			<button id="submitButton" type="submit">Submit</button> &emsp; &emsp; &emsp; &emsp; &emsp;
-			<button id="backButton" type="submit" onclick="home();">Back</button>
+				<button id="submitButton" type="submit">Update</button>
+				&emsp; &emsp; &emsp; &emsp; &emsp;
+				<button id="backButton" type="submit"
+					onclick="home();">Back</button>
 			</div>
 		</form>
 	</div>

@@ -27,8 +27,8 @@ $(document).ready(function() {
 			dataType: 'json',
 			success: function(data) {
 
-				// Ajax call completed successfully
-				alert("Form Submited Successfully");
+				alert("Created successfully!")
+				location.href = "index.html"
 			},
 			error: function(data) {
 
