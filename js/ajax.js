@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 			if (response.length > 0) {
 				console.log(response);
-				var $data = $('<table id="mytable" border="2" cellspacing="" cellpadding="4" width="1300"> </table>');
+				var $data = $('<table id="mytable" border="2" cellspacing="0" cellpadding="4" width="1300"> </table>');
 				var header = "<thead><tr><th>Seq.</th><th>Issue Type</th><th>Issue Description</th><th>Cause</th><th>Resolved</th><th>Resolution</th><th>Tags</th><th>Refs</th><th>Id</th><th>Action</th></tr></thead>";
 				$data.append(header);
 				$.each(response, function(i, row) {
