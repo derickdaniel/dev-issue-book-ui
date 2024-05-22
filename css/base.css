@@ -19,7 +19,7 @@ body {
 
 .main h2 {
 	color: #808000;
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 }
 
 label {
@@ -59,4 +59,13 @@ button {
 	cursor: pointer;
 	width: 100%;
 	font-size: 12px;
+}
+
+@keyframes blink-animation {  
+  0% { opacity: 1; }  
+  50% { opacity: 0; }  
+  100% { opacity: 1; }  
+}  
+.blink-text {
+	animation: blink-animation 0.5s infinite;
 }

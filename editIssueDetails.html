@@ -12,9 +12,13 @@
 <script type="text/javascript" src="js/commons.js"></script>
 
 <body>
-	<div id="create" align="right">
-		<h1 align="left">Developer's Issue Book</h1>
-	</div>
+	<header>
+		<div id="create" align="right">
+			<h1 align="left">
+				<span class="blink-text">></span> Developer's Issue Book
+			</h1>
+		</div>
+	</header>
 	<div class="main" style="width: 500px; margin: 0 auto;">
 		<h2>Edit Issue</h2>
 		<form action="" method="post" id="editFormId">
@@ -41,14 +45,21 @@
 				for="references">References:</label> <input type="text"
 				id="references" name="references" /> <label for="tags">Tags:</label>
 			<input type="text" id="tags" name="tags" /> <br> <br>
+			
+			<input type="hidden" name="hid" id="createdAt" value= "createdAt">
+			
 			<div align="center">
 				<button id="submitButton" type="submit">Update</button>
 				&emsp; &emsp; &emsp; &emsp; &emsp;
-				<button id="backButton" type="submit"
-					onclick="home();">Back</button>
+				<button id="backButton" type="submit" onclick="home();">Back</button>
 			</div>
 		</form>
 	</div>
+	<footer>
+		<h1 align="left">
+			<span class="blink-text">></span>
+		</h1>
+	</footer>
 </body>
 </body>
 

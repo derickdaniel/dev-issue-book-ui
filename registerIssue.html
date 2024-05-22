@@ -12,10 +12,14 @@
 <script type="text/javascript" src="js/createIssue.js"></script>
 
 <body>
-	<div id="create" align="right">
-		<h1 align="left">Developer's Issue Book</h1>
-	</div>
-	<div class="main" style="width:500px; margin:0 auto;">
+	<header>
+		<div id="create" align="right">
+			<h1 align="left">
+				<span class="blink-text">></span> Developer's Issue Book
+			</h1>
+		</div>
+	</header>
+	<div class="main" style="width: 500px; margin: 0 auto;">
 
 		<h2>Issue Registration</h2>
 		<form action="" method="post" id="formId">
@@ -33,19 +37,25 @@
 				id="rootCause" name="rootCause" /> <label
 				style="display: inline-block"> <span
 				style="vertical-align: middle"> Resolved </span> <input
-				type="checkbox" id="resolved" name="resolved" class="tick"/>
+				type="checkbox" id="resolved" name="resolved" class="tick" />
 			</label> <br> <br> <label for="resolution">Resolution:</label> <input
 				type="text" id="resolution" name="resolution" /> <label
 				for="references">References:</label> <input type="text"
 				id="references" name="references" /> <label for="tags">Tags:</label>
-			<input type="text" id="tags" name="tags" /> <br>
-			<br>
+			<input type="text" id="tags" name="tags" /> <br> <br>
 			<div align="center">
-			<button id="submitButton" type="submit">Submit</button> &emsp; &emsp; &emsp; &emsp; &emsp;
-			<button id="backButton" type="submit" onclick="home();">Back</button>
+				<button id="submitButton" type="submit">Submit</button>
+				&emsp; &emsp; &emsp; &emsp; &emsp;
+				<button id="backButton" type="submit" onclick="home();">Back</button>
 			</div>
 		</form>
 	</div>
+
+	<footer>
+		<h1 align="left">
+			<span class="blink-text">></span>
+		</h1>
+	</footer>
 </body>
 </body>
 

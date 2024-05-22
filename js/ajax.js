@@ -7,8 +7,8 @@ $(document).ready(function() {
 
 			if (response.length > 0) {
 				console.log(response);
-				var $data = $('<table id="mytable" border="2" cellspacing="0" cellpadding="4" width="1300"> </table>');
-				var header = "<thead><tr><th>Seq.</th><th>Issue Type</th><th>Issue Description</th><th>Cause</th><th>Resolved</th><th>Resolution</th><th>Tags</th><th>Refs</th><th>Id</th><th>Action</th></tr></thead>";
+				var $data = $('<table id="mytable" border="2" cellspacing="0" cellpadding="" width="1400"></table>');
+				var header = "<thead><tr><th>Seq.</th><th>Issue Type</th><th>Issue Description</th><th>Root Cause</th><th>Resolved</th><th>Resolution</th><th>Tags</th><th>Refs</th><th>Id</th><th>CreatedAt</th><th>Action</th></tr></thead>";
 				$data.append(header);
 				$.each(response, function(i, row) {
 					var $row = $('<tr align="center"/>');
@@ -22,16 +22,21 @@ $(document).ready(function() {
 					$row.append($hidden);
 
 					$row.append($('<td/>').html((row.issueDesc !== undefined && row.issueDesc !== '') ? row.issueDesc : 'NA'));
+					$hidden = $(' <input type="hidden" name="hid" id="issueDesc">');
+					$row.append($hidden);
+					
+					
 					$row.append($('<td/>').html((row.cause !== undefined && row.cause !== '') ? row.cause : 'NA'));
-
+                    $hidden = $(' <input type="hidden" name="hid" id="cause">');
+                    $row.append($hidden);
 
 					if (row.resolved) {
-						$row.append($('<td/>').html('<input id="" type="checkbox" onclick="return false;" checked=checked class="tick"/>'));
-						$hidden = $(' <input type="hidden" name="hid" id="issueDesc" checked=checked>');
+						$row.append($('<td/>').html('<input id="cb1" type="checkbox" onclick="return false;" checked=checked class="tick"/>'));
+						$hidden = $(' <input type="hidden" name="hid" id="cb1" checked=checked>');
 					} else {
-						$row.append($('<td/>').html('<input id="" type="checkbox" onclick="return false;" class="nontick"/>' +
+						$row.append($('<td/>').html('<input id="cb1" type="checkbox" onclick="return false;" class="nontick"/>' +
 							'<br><br><a href="https://www.google.com/search?q="' + row.issueType + ">Google</a>"));
-						$hidden = $(' <input type="hidden" name="hid" id="issueDesc">');
+						$hidden = $(' <input type="hidden" name="hid" id="cb1">');
 					}
 					$row.append($hidden);
 
@@ -67,6 +72,10 @@ $(document).ready(function() {
 
 					$row.append($('<td/>').html((row.id !== undefined && row.id !== '') ? row.id : 'NA'));
 					$hidden = $(' <input type="hidden" name="hid" id="id" value= "' + row.id + '">');
+					$row.append($hidden);
+					
+					$row.append($('<td/>').html((row.createdAt !== undefined && row.cretedAt !== '') ? row.createdAt : 'NA'));
+					$hidden = $(' <input type="hidden" name="hid" id="createdAt" value= "' + row.createdAt + '">');
 					$row.append($hidden);
 
 					$editDelButton = $("<td><button class='btn' id='editBtn' onclick=\"edit('" + row.id + "')\"><b>Edit</b></button> <br><br> <button class='btn' id='delbtn' onclick=\"deleteData('" + row.id + "')\"><b>Delete</b></button></td>");

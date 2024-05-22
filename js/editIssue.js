@@ -12,7 +12,8 @@ $(document).ready(function() {
 			$("#issueDesc").val(response.issueDesc);
 			$("#issueType").val(response.issueType);
 			$("#rootCause").val(response.cause);
-			$("#resolution").val(response.resolution);;
+			$("#resolution").val(response.resolution);
+			$("#createdAt").val(response.createdAt);
 
 			var isResolved = response.resolved;
 			$("#resolved").prop('checked', isResolved)
@@ -32,7 +33,8 @@ $(document).ready(function() {
 		obj.issueDesc = $("#issueDesc").val();
 		obj.issueType = $("#issueType").val();
 		obj.cause = $("#rootCause").val();
-		obj.resolution = $("#resolution").val();;
+		obj.resolution = $("#resolution").val();
+		obj.createdAt = $("#createdAt").val();
 
 		var isResolved = $("#resolved").is(":checked");
 		obj.resolved = isResolved;

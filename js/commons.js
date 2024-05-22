@@ -1,7 +1,11 @@
+$(document).ready(function() {
+	$("#header").load("pages/header.html");
+	$("#footer").load("pages/footer.html");
+});
+
 function home() {
 	location.href = "index.html";
 }
-
 
 function jsonArray(str) {
 	arr = [];

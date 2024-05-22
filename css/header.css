@@ -3,12 +3,12 @@ h1 {
 }
 
 .tick {
-    accent-color: green;
+	accent-color: green;
 }
 
 .nontick {
-    background: red;
-    background-color: red;
-    color: red;
-    accent-color: red;
+	background: red;
+	background-color: red;
+	color: red;
+	accent-color: red;
 }
