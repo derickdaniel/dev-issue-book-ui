@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/header.css" />
+<title>Sign In</title>
+</head>
+
+<body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/sessionMgmt.js"></script>
+
+	<header>
+		<div id="create" align="right">
+			<h1 align="left">
+				<span class="blink-text">></span> Developer's Issue Book
+			</h1>
+		</div>
+	</header>
+
+	<div class="main" style="width: 400px; margin: 0 auto; margin-top: 7%" >
+            <h2 align="center">Sign In</h2><br>	
+            <form action="" method="post" id="loginFormId">
+                <label for="userName">User Name:</label>
+                <input type="text" id="userName" name="userName" required />
+ 
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required />
+ 
+			<div align="center">
+				<button id="signInBtn" type="submit">Submit</button>
+				&emsp; &emsp; &emsp; &emsp; &emsp;
+				<button id="backButton" type="submit" onclick="home();">Back</button>
+			</div>
+
+		</form>
+        </div>
+
+	<footer>
+		<h1 align="left">
+			<span class="blink-text">></span>
+		</h1>
+	</footer>
+</body>
+</html>

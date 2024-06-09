@@ -12,3 +12,9 @@ h1 {
 	color: red;
 	accent-color: red;
 }
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
