@@ -1,8 +1,19 @@
 $(document).ready(function() {
+	console.log("auth: " +localStorage.getItem("access-token"));
 	$.ajax({
-		url: "http://localhost:8082/issue",
+		url: "http://localhost:8082/dib/issue",
 		type: 'GET',
 		contentType: "application/json; charset=utf-8",
+		dataType: 'jsonp',
+		//crossDomain: true,
+		//xhrFields: { withCredentials: true }, 
+		/*beforeSend: function(xhr) {
+			xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem('access-token'));
+			xhr.setRequestHeader('Accept', 'application/json');
+		},*/
+		headers: {
+			"Authorization": "Bearer " + localStorage.getItem('access-token'),
+		},
 		success: function(response) {
 
 			if (response.length > 0) {

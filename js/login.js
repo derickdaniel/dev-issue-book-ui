@@ -27,7 +27,7 @@ $(document).ready(function() {
 				console.log(localStorage);
 				
 				alert("Welcome back! " + localStorage.getItem("user-name"));
-				//location.href = "index.html"
+				location.href = "index.html"
 			},
 			error: function(data) {
 
