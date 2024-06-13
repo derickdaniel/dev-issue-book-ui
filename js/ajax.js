@@ -93,8 +93,11 @@ $(document).ready(function() {
 			}
 		},
 		error: function(response) {
-			console.log("request failed: " + response);
-			location.href = "login.html";
+			console.log("request failed: " + response.status);
+			if (response.status == 401) {
+				alert("Your session has Expired!! Please login");
+				location.href = "login.html";
+			}
 		}
 	});
 });
@@ -128,8 +131,10 @@ function deleteData(id) {
 				window.location.reload()
 			},
 			error: function(data) {
-
-				alert("some Error");
+				console.log("request failed: " + response.status);
+				if (response.status == 401) {
+					location.href = "login.html";
+				}
 			}
 		});
 	}

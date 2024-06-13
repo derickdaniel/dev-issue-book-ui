@@ -28,15 +28,16 @@ $(document).ready(function() {
 			headers: {
 				"Authorization": "Bearer " + localStorage.getItem('access-token'),
 			},
-			success: function(data) {
-
+			success: function(response) {
 				alert("Created successfully!")
 				location.href = "index.html"
 			},
-			error: function(data) {
-
-				// Some error in ajax call
-				alert("some Error");
+			error: function(response) {
+				console.log("request failed: " + response.status);
+				if (response.status == 401) {
+					alert("Your session has Expired!! Please login");
+					location.href = "login.html";
+				}
 			}
 		});
 	});
