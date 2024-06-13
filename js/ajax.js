@@ -1,23 +1,15 @@
 $(document).ready(function() {
-	console.log("auth: " +localStorage.getItem("access-token"));
+	console.log("auth: " + localStorage.getItem("access-token"));
 	$.ajax({
-		url: "http://localhost:8082/dib/issue",
+		url: "http://localhost:8080/dib/issue",
 		type: 'GET',
 		contentType: "application/json; charset=utf-8",
-		dataType: 'jsonp',
-		//crossDomain: true,
-		//xhrFields: { withCredentials: true }, 
-		/*beforeSend: function(xhr) {
-			xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem('access-token'));
-			xhr.setRequestHeader('Accept', 'application/json');
-		},*/
 		headers: {
 			"Authorization": "Bearer " + localStorage.getItem('access-token'),
 		},
 		success: function(response) {
 
 			if (response.length > 0) {
-				console.log(response);
 				var $data = $('<table id="mytable" border="2" cellspacing="0" cellpadding="" width="1400"></table>');
 				var header = "<thead><tr><th>Seq.</th><th>Issue Type</th><th>Issue Description</th><th>Root Cause</th><th>Resolved</th><th>Resolution</th><th>Tags</th><th>Refs</th><th>Id</th><th>CreatedAt</th><th>Action</th></tr></thead>";
 				$data.append(header);
@@ -35,11 +27,11 @@ $(document).ready(function() {
 					$row.append($('<td/>').html((row.issueDesc !== undefined && row.issueDesc !== '') ? row.issueDesc : 'NA'));
 					$hidden = $(' <input type="hidden" name="hid" id="issueDesc">');
 					$row.append($hidden);
-					
-					
+
+
 					$row.append($('<td/>').html((row.cause !== undefined && row.cause !== '') ? row.cause : 'NA'));
-                    $hidden = $(' <input type="hidden" name="hid" id="cause">');
-                    $row.append($hidden);
+					$hidden = $(' <input type="hidden" name="hid" id="cause">');
+					$row.append($hidden);
 
 					if (row.resolved) {
 						$row.append($('<td/>').html('<input id="cb1" type="checkbox" onclick="return false;" checked=checked class="tick"/>'));
@@ -84,7 +76,7 @@ $(document).ready(function() {
 					$row.append($('<td/>').html((row.id !== undefined && row.id !== '') ? row.id : 'NA'));
 					$hidden = $(' <input type="hidden" name="hid" id="id" value= "' + row.id + '">');
 					$row.append($hidden);
-					
+
 					$row.append($('<td/>').html((row.createdAt !== undefined && row.cretedAt !== '') ? row.createdAt : 'NA'));
 					$hidden = $(' <input type="hidden" name="hid" id="createdAt" value= "' + row.createdAt + '">');
 					$row.append($hidden);
@@ -97,21 +89,14 @@ $(document).ready(function() {
 				$("#MyDiv").append($data);
 			}
 			else {
-				console.log("empty!!!")
+				console.log("empty!!!");
 			}
+		},
+		error: function(response) {
+			console.log("request failed: " + response);
+			location.href = "login.html";
 		}
 	});
-
-	/*	if ($('#staticTbl tr').length > 0) {
-	
-			//$('#input-1').trigger('change');
-		}
-
-	$("#staticTbl tr:gt(0)").each(function() {
-		$(this).find('input').trigger('change');
-		console.log("trigger");
-	});*/
-
 });
 
 function checkBox(isResolved) {
@@ -123,18 +108,19 @@ function checkBox(isResolved) {
 
 function edit(id) {
 	console.log("Edit");
-	//$("#id").val()
 	window.location.href = 'editIssueDetails.html?id=' + id;
 }
 
 function deleteData(id) {
 	console.log("Delete");
 
-	//call for delete issue data by id
 	if (confirm("Are you sure, you want to delete id: " + id + " ?")) {
 		$.ajax({
 			type: "DELETE",
-			url: "http://localhost:8082/issue/" + id,
+			url: "http://localhost:8080/dib/issue/" + id,
+			headers: {
+				"Authorization": "Bearer " + localStorage.getItem('access-token'),
+			},
 			success: function(data) {
 
 				alert("Deleted successfully!")

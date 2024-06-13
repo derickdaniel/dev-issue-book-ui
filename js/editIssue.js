@@ -3,9 +3,12 @@ $(document).ready(function() {
 	var queryParams = location.search;
 	var id = queryParams.substring(queryParams.indexOf('=') + 1);
 	$.ajax({
-		url: "http://localhost:8082/issue/" + id,
+		url: "http://localhost:8080/dib/issue/" + id,
 		type: 'GET',
 		contentType: "application/json; charset=utf-8",
+		headers: {
+			"Authorization": "Bearer " + localStorage.getItem('access-token'),
+		},
 		success: function(response) {
 
 			$("#id").val(response.id);
@@ -47,10 +50,13 @@ $(document).ready(function() {
 
 		$.ajax({
 			type: "PATCH",
-			url: "http://localhost:8082/issue/" + id,
+			url: "http://localhost:8080/dib/issue/" + id,
 			data: jsonData,
 			contentType: "application/json; charset=UTF-8",
 			dataType: 'json',
+			headers: {
+				"Authorization": "Bearer " + localStorage.getItem('access-token'),
+			},
 			success: function(data) {
 
 				alert("Updated successfully!")

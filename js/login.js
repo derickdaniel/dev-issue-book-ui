@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 		$.ajax({
 			type: "POST",
-			url: "http://localhost:8081/authenticate/login",
+			url: "http://localhost:8080/authenticate/login",
 			crossDomain: true,
 			data: jsonData,
 			contentType: "application/json; charset=UTF-8",
@@ -27,7 +27,7 @@ $(document).ready(function() {
 				console.log(localStorage);
 				
 				alert("Welcome back! " + localStorage.getItem("user-name"));
-				location.href = "index.html"
+				location.href = "index.html";
 			},
 			error: function(data) {
 

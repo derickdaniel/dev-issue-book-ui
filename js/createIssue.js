@@ -9,7 +9,7 @@ $(document).ready(function() {
 		obj.issueType = $("#issueType").val();
 		obj.cause = $("#rootCause").val();
 		obj.resolution = $("#resolution").val();;
-		
+
 		var isResolved = $("#resolved").is(":checked");
 		obj.resolved = isResolved;
 		console.log(obj.resolved);
@@ -21,10 +21,13 @@ $(document).ready(function() {
 
 		$.ajax({
 			type: "POST",
-			url: "http://localhost:8082/issue",
+			url: "http://localhost:8080/dib/issue",
 			data: jsonData,
 			contentType: "application/json; charset=UTF-8",
 			dataType: 'json',
+			headers: {
+				"Authorization": "Bearer " + localStorage.getItem('access-token'),
+			},
 			success: function(data) {
 
 				alert("Created successfully!")
