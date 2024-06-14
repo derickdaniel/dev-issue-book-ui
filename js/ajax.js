@@ -38,7 +38,7 @@ $(document).ready(function() {
 						$hidden = $(' <input type="hidden" name="hid" id="cb1" checked=checked>');
 					} else {
 						$row.append($('<td/>').html('<input id="cb1" type="checkbox" onclick="return false;" class="nontick"/>' +
-							'<br><br><a href="https://www.google.com/search?q="' + row.issueType + ">Google</a>"));
+							'<br><br><a href="https://www.google.com/search?q=' + row.issueDesc.trim() + '" target="_blank">Google</a>'));
 						$hidden = $(' <input type="hidden" name="hid" id="cb1">');
 					}
 					$row.append($hidden);
@@ -64,7 +64,7 @@ $(document).ready(function() {
 					if (row.references != undefined && row.references.length > 0) {
 						let refs = [];
 						$.each(row.references, function(i, ref) {
-							refs[i] = '<a href="' + ref + '">' + "reference-link-" + (i + 1) + "\n" + '</a>';
+							refs[i] = '<a href="' + ref + '">' + "reference-" + (i + 1) + "\n" + '</a>';
 						});
 						$row.append($('<td/>').html(refs));
 					} else {
