@@ -11,7 +11,7 @@ $(document).ready(function() {
 
 			if (response.length > 0) {
 				var $data = $('<table id="mytable" border="2" cellspacing="0" cellpadding="" width="1400"></table>');
-				var header = "<thead><tr><th>Seq.</th><th>Issue Type</th><th>Issue Description</th><th>Root Cause</th><th>Resolved</th><th>Resolution</th><th>Tags</th><th>Refs</th><th>Id</th><th>CreatedAt</th><th>Action</th></tr></thead>";
+				var header = "<thead><tr><th>SNO</th><th>Issue Type</th><th>Issue Description</th><th>Root Cause</th><th>Resolved</th><th>Resolution</th><th>Tags</th><th>Refs</th><th>Id</th><th>CreatedAt</th><th>Action</th></tr></thead>";
 				$data.append(header);
 				$.each(response, function(i, row) {
 					var $row = $('<tr align="center"/>');
@@ -20,16 +20,16 @@ $(document).ready(function() {
 					$hidden = $(' <input type="hidden" name="hid" id="issueDesc" value= "' + row.issueDesc + '">');
 					$row.append($hidden);
 
-					$row.append($('<td/>').html((row.issueType !== undefined && row.issueType !== '') ? row.issueType : 'NA'));
+					$row.append($('<td/>').html((row.issueType !== undefined && row.issueType !== '') ? row.issueType : 'N/A'));
 					$hidden = $(' <input type="hidden" name="hid" id="issueType" value= "' + row.issueType + '">');
 					$row.append($hidden);
 
-					$row.append($('<td/>').html((row.issueDesc !== undefined && row.issueDesc !== '') ? row.issueDesc : 'NA'));
+					$row.append($('<td/>').html((row.issueDesc !== undefined && row.issueDesc !== '') ? row.issueDesc : 'N/A'));
 					$hidden = $(' <input type="hidden" name="hid" id="issueDesc">');
 					$row.append($hidden);
 
 
-					$row.append($('<td/>').html((row.cause !== undefined && row.cause !== '') ? row.cause : 'NA'));
+					$row.append($('<td/>').html((row.cause !== undefined && row.cause !== '') ? row.cause : 'N/A'));
 					$hidden = $(' <input type="hidden" name="hid" id="cause">');
 					$row.append($hidden);
 
@@ -44,7 +44,7 @@ $(document).ready(function() {
 					$row.append($hidden);
 
 
-					$row.append($('<td/>').html((row.resolution !== undefined && row.resolution !== '') ? row.resolution : 'NA'));
+					$row.append($('<td/>').html((row.resolution !== undefined && row.resolution !== '') ? row.resolution : 'N/A'));
 					$hidden = $(' <input type="hidden" name="hid" id="resolution" value= "' + row.resolution + '">');
 					$row.append($hidden);
 
@@ -55,7 +55,7 @@ $(document).ready(function() {
 						});
 						$row.append($('<td/>').html(tags));
 					} else {
-						$row.append($('<td/>').html("NA"));
+						$row.append($('<td/>').html("N/A"));
 					}
 					$hidden = $(' <input type="hidden" name="hid" id="tags" value= "' + row.tags + '">');
 					$row.append($hidden);
@@ -68,16 +68,16 @@ $(document).ready(function() {
 						});
 						$row.append($('<td/>').html(refs));
 					} else {
-						$row.append($('<td/>').html("NA"));
+						$row.append($('<td/>').html("N/A"));
 					}
 					$hidden = $(' <input type="hidden" name="hid" id="references" value= "' + row.references + '">');
 					$row.append($hidden);
 
-					$row.append($('<td/>').html((row.id !== undefined && row.id !== '') ? row.id : 'NA'));
+					$row.append($('<td/>').html((row.id !== undefined && row.id !== '') ? row.id : 'N/A'));
 					$hidden = $(' <input type="hidden" name="hid" id="id" value= "' + row.id + '">');
 					$row.append($hidden);
 
-					$row.append($('<td/>').html((row.createdAt !== undefined && row.cretedAt !== '') ? row.createdAt : 'NA'));
+					$row.append($('<td/>').html((row.createdAt !== undefined && row.cretedAt !== '') ? row.createdAt : 'N/A'));
 					$hidden = $(' <input type="hidden" name="hid" id="createdAt" value= "' + row.createdAt + '">');
 					$row.append($hidden);
 
@@ -90,6 +90,7 @@ $(document).ready(function() {
 			}
 			else {
 				console.log("empty!!!");
+				$("#MyDiv").append("No data found.");
 			}
 		},
 		error: function(response) {

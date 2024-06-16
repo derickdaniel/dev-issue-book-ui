@@ -22,6 +22,14 @@ function logout() {
 	location.href = "login.html";
 }
 
+function login() {
+	location.href = "login.html";
+}
+
+function createAccount() {
+	location.href = "registerUser.html";
+}
+
 function clearUser() {
 	$("#userNameId").html("");
 	localStorage.removeItem("access-token");

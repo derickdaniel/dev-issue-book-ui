@@ -3,35 +3,42 @@
 
 <head>
 <link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="css/header.css" />
 <title>Index Page</title>
 </head>
 
 <body>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<div
+		style="display: flex; justify-content: space-between; background-color: lightblue; color: darkblue; border-bottom: solid;">
+		<h1 align="left">
+			<span class="blink-text">></span> Developer's Issue Book
+		</h1>
+	</div>
 
+	<br><br>
 	<div class="main" style="width: 500px; margin: 0 auto;">
-            <h2 align="center">Registration Form</h2><br><br>	
-            <form action="">
-                <label for="first">First Name:</label>
-                <input type="text" id="first" name="first" required />
- 
-                <label for="last">Last Name:</label>
-                <input type="text" id="last" name="last" required />
- 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required />
- 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password"
+		<h2 align="center">Create Account</h2>
+		<br>
+		<br>
+		<form action="" id="userFormId">
+
+			<label for="username">Username:</label> <input type="text"
+				id="username" name="username" required /> <label for="email">Email:</label>
+			<input type="email" id="email" name="email" required /> <label
+				for="password">Password:</label> <input type="password"
+				id="password" name="password"
 				pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9])\S{8,}$"
 				title="Password must contain at least one number, 
                            one alphabet, one symbol, and be at 
                            least 8 characters long"
-				required />
+				required /> <label for="repassword">Re-type Password:</label> <input
+				type="password" id="repassword" name="repassword" required />
+
+			<!--  <label for="first">First Name:</label>
+                <input type="text" id="first" name="first" required />
  
-                <label for="repassword">Re-type Password:</label>
-                <input type="password" id="repassword" name="repassword"
-				required />
+                <label for="last">Last Name:</label>
+                <input type="text" id="last" name="last" required />
  
                 <label for="mobile">Contact:</label>
                 <input type="text" id="mobile" name="mobile"
@@ -48,15 +55,25 @@
                     <option value="other">
                         Other
                     </option>
-                </select>
+                </select> -->
 
+			<br>
+			<br>
 			<div align="center">
 				<button id="submitButton" type="submit">Submit</button>
 				&emsp; &emsp; &emsp; &emsp; &emsp;
-				<button id="backButton" type="submit" onclick="home();">Back</button>
+				<button id="backButton" type="submit" onclick="login()">Login</button>
 			</div>
-
 		</form>
-        </div>
-    </body>
+	</div>
+
+	<footer>
+		<span class="blink-text">></span>
+	</footer>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/commons.js"></script>
+	<script type="text/javascript" src="js/createUser.js"></script>
+
+</body>
 </html>

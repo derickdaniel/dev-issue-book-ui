@@ -6,12 +6,7 @@
 <link rel="stylesheet" href="css/header.css" />
 <title>Sign In</title>
 </head>
-
 <body>
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/login.js"></script>
-	<script type="text/javascript" src="js/sessionMgmt.js"></script>
-	
 	<div
 		style="display: flex; justify-content: space-between; background-color: lightblue; color: darkblue; border-bottom: solid;">
 		<h1 align="left">
@@ -29,7 +24,11 @@
                 <input type="password" id="password" name="password" value="User" required />
  
 			<div align="center">
-				<button id="signInBtn" type="submit">Submit</button>
+				<button id="signInBtn" type="submit">Login</button>
+			</div>
+			<div align="center" style="font-family: serif;">
+				<br><i>or create an account ?</i><br><br>
+				<button id="signInBtn" type="submit" onclick="createAccount()">Sign Up</button>
 			</div>
 
 		</form>
@@ -38,5 +37,10 @@
 	<footer>
 		<span class="blink-text">></span>>
 	</footer>
+	
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/commons.js"></script>
+	<script type="text/javascript" src="js/sessionMgmt.js"></script>
 </body>
 </html>
