@@ -95,6 +95,7 @@ $(document).ready(function() {
 		error: function(response) {
 			console.log("request failed: " + response.status);
 			if (response.status == 401) {
+				clearUser();
 				alert("Your session has Expired!! Please login");
 				location.href = "login.html";
 			}

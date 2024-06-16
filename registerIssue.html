@@ -12,16 +12,22 @@
 <script type="text/javascript" src="js/createIssue.js"></script>
 
 <body>
-	<header>
-		<div id="create" align="right">
-			<h1 align="left">
-				<span class="blink-text">></span> Developer's Issue Book
-			</h1>
+	<div
+		style="display: flex; justify-content: space-between; background-color: lightblue; color: darkblue; border-bottom: solid;">
+		<h1 align="left">
+			<span class="blink-text">></span> Developer's Issue Book
+		</h1>
+		<div>
+			<h4 align="right">
+				<a href="#" onclick="logout()">Logout</a>
+			</h4>
 		</div>
-	</header>
+	</div>
+	
+	<br><br>
 	<div class="main" style="width: 500px; margin: 0 auto;">
 
-		<h2>Issue Registration</h2>
+		<h2 align="center">Issue Registration</h2> <br><br>
 		<form action="" method="post" id="formId">
 			<label for="issueDesc">Issue Description:</label> <input type="text"
 				id="issueDesc" name="issueDesc" required /> <label for="issueType">Issue
@@ -51,10 +57,9 @@
 		</form>
 	</div>
 
+<br><br>
 	<footer>
-		<h1 align="left">
-			<span class="blink-text">></span>
-		</h1>
+		<span class="blink-text">></span>
 	</footer>
 </body>
 </body>

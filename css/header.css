@@ -1,20 +1,14 @@
-h1 {
+/* h1 {
+	background: #808000;
+} */
+
+h3 {
 	background: #808000;
 }
 
-.tick {
-	accent-color: green;
-}
-
-.nontick {
-	background: red;
-	background-color: red;
-	color: red;
-	accent-color: red;
-}
-
 footer {
-	/* position: absolute; */
-	bottom: 0;
+	position: fixed;
+    bottom: 0px;
 	width: 100%;
+	background: lightblue;
 }

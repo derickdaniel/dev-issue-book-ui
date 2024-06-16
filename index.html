@@ -3,9 +3,9 @@
 
 <head>
 <title>Index Page</title>
+<link rel="stylesheet" href="css/header.css" />
 <link rel="stylesheet" href="css/base.css" />
 <link rel="stylesheet" href="css/table.css" />
-<link rel="stylesheet" href="css/header.css" />
 </head>
 
 <body>
@@ -15,24 +15,26 @@
 	<script type="text/javascript" src="js/commons.js"></script>
 	<script type="text/javascript" src="js/ajax.js"></script>
 
-	<header>
-		<div id="create" align="right">
-			<h1 align="left">
-				<span class="blink-text">></span> Developer's Issue Book
-			</h1>
+	<div
+		style="display: flex; justify-content: space-between; background-color: lightblue; color: darkblue; border-bottom: solid;">
+		<h1 align="left">
+			<span class="blink-text">></span> Developer's Issue Book
+		</h1>
+		<div>
+			<h4 align="right" style="display: table-row;">
+			    <i><span style="font-family: ui-serif;" id="userNameId"></span></i> <br><br>
+				<a href="registerIssue.html">Register Issue</a><br> 
+				<a href="#" onclick="logout()">Logout</a>
+			</h4>
 		</div>
-	</header>
+	</div>
 
-	<div align="right">
-		<a href="registerIssue.html">Register new issue</a>
-	</div><br>
-
+	<br><br>
 	<div id="MyDiv" align="center"></div>
 
+	<br><br>
 	<footer>
-		<h1 align="left">
-			<span class="blink-text">></span>
-		</h1>
+		<span class="blink-text">></span>
 	</footer>
 </body>
 

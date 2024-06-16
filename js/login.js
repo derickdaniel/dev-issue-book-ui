@@ -26,7 +26,7 @@ $(document).ready(function() {
 				localStorage.setItem("role", data.roles);
 				console.log(localStorage);
 				
-				alert("Welcome back! " + localStorage.getItem("user-name"));
+				alert("Welcome " + localStorage.getItem("user-name"));
 				location.href = "index.html";
 			},
 			error: function(data) {
