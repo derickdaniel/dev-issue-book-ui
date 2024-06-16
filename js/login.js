@@ -30,9 +30,7 @@ $(document).ready(function() {
 				location.href = "index.html";
 			},
 			error: function(data) {
-
-				// Some error in ajax call
-				alert("some Error: " +data.error());
+				alert("Login failed " + data.status);
 			}
 		});
 	});

@@ -27,6 +27,7 @@ $(document).ready(function() {
 				location.href = "login.html"
 			},
 			error: function(response) {
+				alert(response.status + " " + response.responseJSON.message);
 				console.log("request failed: " + response.status);
 			}
 		});
