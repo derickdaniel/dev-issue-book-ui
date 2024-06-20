@@ -1,6 +1,13 @@
-/* h1 {
-	background: #808000;
-} */
+.head {
+	display: flex;
+	justify-content: space-between;
+	background-color: #66CDAA;
+	color: darkblue;
+	border-bottom: solid;
+	margin-top: -8px;
+	margin-left: -8px;
+	margin-right: -8px;
+}
 
 h3 {
 	background: #808000;
@@ -10,5 +17,9 @@ footer {
 	position: fixed;
     bottom: 0px;
 	width: 100%;
-	background: lightblue;
+	background: #66CDAA;
+	color: darkblue;
+	border-top: solid;
+	margin-left: -8px;
+	opacity: 0.5;
 }
