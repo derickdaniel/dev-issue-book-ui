@@ -24,7 +24,6 @@ $(document).ready(function() {
 				localStorage.setItem("refresh-token", data.refreshToken);
 				localStorage.setItem("user-name", data.username);
 				localStorage.setItem("role", data.roles);
-				console.log(localStorage);
 				
 				alert("Welcome " + localStorage.getItem("user-name"));
 				location.href = "index.html";

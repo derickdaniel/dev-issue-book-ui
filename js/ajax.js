@@ -10,7 +10,7 @@ $(document).ready(function() {
 		success: function(response) {
 
 			if (response.length > 0) {
-				var $data = $('<table id="mytable" border="2" cellspacing="0" cellpadding="" width="1400"></table>');
+				var $data = $('<table id="mytable" border="2" cellspacing="0" cellpadding="5" width="1400"></table>');
 				var header = "<thead><tr><th>SNO</th><th>Issue Type</th><th>Issue Description</th><th>Root Cause</th><th>Resolved</th><th>Resolution</th><th>Tags</th><th>Refs</th><th>Id</th><th>CreatedAt</th><th>Action</th></tr></thead>";
 				$data.append(header);
 				$.each(response, function(i, row) {
@@ -96,13 +96,24 @@ $(document).ready(function() {
 		error: function(response) {
 			console.log("request failed: " + response.status);
 			if (response.status == 401) {
-				clearUser();
-				alert("Your session has Expired!! Please login");
-				location.href = "login.html";
+
+				$.when(refreshToken()).done(function(result) {
+					alert("Refreshing token: " +result);
+					if (result) {
+						location.href = "index.html";
+						console.log("Access token refreshed!");
+					} else {
+						alert("Your session has Expired!! Please login");
+						logout();
+					}
+				});
+
+
 			}
 		}
 	});
 });
+
 
 function checkBox(isResolved) {
 	$('#addCheckbox').click(function() {
