@@ -50,6 +50,7 @@ button[type="submit"] {
 	cursor: pointer;
 	width: 30%;
 	font-size: 12px;
+	font-family: 'Aldrich';
 }
 
 button {
@@ -61,6 +62,7 @@ button {
 	cursor: pointer;
 	width: 90%;
 	font-size: 12px;
+	font-family: 'Aldrich';
 }
 
 @keyframes blink-animation {  
