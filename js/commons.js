@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	$("#headerId").load("pages/header.html");
-	$("#footerId").load("pages/footer.html");
+	//$("#headerId").load("pages/header.html");
+	//$("#footerId").load("pages/footer.html");
 
 	displayUserName();
 });

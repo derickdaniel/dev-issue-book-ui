@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Aldrich");
+
 body {
-	font-family: Arial, sans-serif;
+	font-family: Aldrich; /*Arial, sans-serif;*/
 	background-color: #f3f3f3;
 	margin: 10;
 	padding: 10;

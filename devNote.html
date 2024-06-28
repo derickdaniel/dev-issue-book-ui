@@ -4,8 +4,7 @@
 <head>
 <title>Index Page</title>
 <link rel="stylesheet" href="css/header.css" />
-<link rel="stylesheet" href="css/base.css" />
-<link rel="stylesheet" href="css/table.css" />
+<link rel="stylesheet" href="css/note.css" />
 </head>
 
 <body>
@@ -13,7 +12,7 @@
 	<!-- script -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/commons.js"></script>
-	<script type="text/javascript" src="js/ajax.js"></script>
+	<script type="text/javascript" src="js/note.js"></script>
 
 	<div id ="headerId"></div>
 	<div class="head">
@@ -24,14 +23,21 @@
 			<h4 align="right" style="display: table-row;">
 			    <i><span style="font-family: ui-serif;" id="userNameId"></span></i> <br><br>
 				<a href="registerIssue.html">Register Issue</a><br>
-				<a href="devNote.html">Dev Notes</a><br>
 				<a href="#" onclick="logout()">Logout</a>
 			</h4>
 		</div>
 	</div>
 
 	<br><br>
-	<div id="MyDiv" align="center"></div>
+	<div class="main" style="width: 500px;">
+	<span style="color: red; font-style: italic;">*Please note, save all notes before leaving the page.</span>
+		<h1>Dev Notes</h1>
+		<input type="text" id="value" placeholder="New List" />
+		<button id="add" type="submit">Add</button>
+		<ol id="mylist"></ol>
+		
+		<button id="saveBtn" style="font: icon; color: white;">Save All</button>
+	</div>
 
 	<br><br>
 	<footer>
