@@ -29,9 +29,9 @@ div #add:hover{
   width:90%;
   color:#000;
   display: flex;
-  flex-direction:column;
+  flex-direction:column-reverse;
   justify-content:flex-start;
-  text-align:space-between;
+  text-align:left;
   /*border:3px solid blue;*/
   
 }
@@ -45,7 +45,7 @@ ol li:before {
     content: counters(list, ".") ". ";
 }
 
-#mylist > li{
+.tasklist > li{
    background-color:#fff;
    width:90%;
    /* display: flex; */
@@ -89,6 +89,19 @@ button {
 	background-color: teal;
 	color: white;
 	cursor: pointer;
-	font-size: 12px;
+	font-size: 15px;
 	font-family: 'Aldrich';
+}
+
+.tick {
+	accent-color: green;
+}
+
+h3 {
+	background: teal;
+	color: ghostwhite;
+}
+
+.compl {
+  text-decoration: line-through;	
 }

@@ -17,7 +17,7 @@
 	<div id ="headerId"></div>
 	<div class="head">
 		<h1 align="left">
-			<span class="blink-text">></span> Developer Book
+			<span class="blink-text">></span> Developer Book 1.0
 		</h1>
 		<div>
 			<h4 align="right" style="display: table-row;">
@@ -30,14 +30,24 @@
 	</div>
 
 	<br><br>
-	<div class="main" style="width: 500px;">
-	<span style="color: red; font-style: italic; font-size: small;">*Please note, save all notes before leaving the page.</span>
-		<h1>Dev Notes</h1>
-		<input type="text" id="value" placeholder="New List" />
-		<button id="add" type="submit">Add</button>
-		<ol id="mylist"></ol>
-		
-		<button id="saveBtn" style="font: icon; color: white; font-family: 'Aldrich'">Save All</button>
+	<div style="width:100%;">
+		<div class="main" style="width: 30%; float:left;">
+			<h2>Dev Tasks</h2>
+			<input type="text" id="value" placeholder="New List" />
+			<button id="add" type="submit">Add</button>
+			<ul id="mylist" class="tasklist"></ul>
+
+			<div id="saveBtn">
+				<button style="font: icon; color: white; font-family: 'Aldrich'" id="saveAllId">Save All</button>
+				<br><br>
+				 <span style="color: red; font-style: italic; font-size: small;">
+				(*Please note, save all notes before leaving the page.) <br>
+				Only today's task can be edited, in the past what's done, it's done</span>
+			</div>
+		</div>
+
+		<div id="taskResult" class="main" style="width: 63%; float:right;">
+		</div>
 	</div>
 
 	<br><br>
