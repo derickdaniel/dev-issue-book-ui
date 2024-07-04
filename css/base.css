@@ -109,7 +109,7 @@ button {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  padding: 5px 5px;
+  padding: 5px 10px;
   color: darkblue;
 }
 
