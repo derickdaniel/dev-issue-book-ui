@@ -74,12 +74,13 @@ function getTasks() {
 			var elem = "";
 			$.each(response, function(k, v) {
 				elem += "<h3>" + k + "</h3>";
-				elem += "<ul>"
+				elem += "<ul class='tasklist'>"
 				v.forEach(function(task, index) {
-					elem += "<li>" + task.taskDesc + "</li>"
+					elem += '<li id="'+ task.taskId +'">' + task.taskDesc + '</li>';
+					elem += '<input id="doneVal" type="hidden" value="' + task.completed + '"/>';
+					elem += '<div style="display: inline-flex;"><input id="cb1" type="checkbox" onclick="return false" checked=checked class="tick"/> <button id="xid" class="rem">X</button></div>';
 				});
 				elem += "</ul>"
-
 			});
 			$("#taskResult").html(elem);
 		},
@@ -107,9 +108,6 @@ function getTodaysTasks() {
 				$("#saveBtn").show();
 				response.forEach(function(task, index) {
 					addNewTaskToList(task.taskId, task.taskDesc, task.completed);
-					if (task.completed) {
-						
-					}
 				});
 			}
 		},
@@ -138,10 +136,15 @@ function createTaskJson() {
 }
 
 function addNewTaskToList(id, val, isDone) {
-	var elem = $('<li id="'+ id +'"></li>'); //create new element
-	$(elem).append("<span>" + val + " </span>");
-	$(elem).append('<input id="doneVal" type="hidden" value="'+ isDone +'"/>')
-	$(elem).append('<div style="display: inline-flex;"><input id="cb1" type="checkbox" onclick="return false" checked=checked class="tick"/> <button id="xid" class="rem">X</button></div>');
+	var elem = createTaskList(id, val, isDone);
 	$("#mylist").append(elem); //add new element at the end of my list
 	$("input").val("");
+}
+
+function createTaskList(id, val, isDone) {
+    var elem = $('<li id="' + id + '"></li>'); //create new element
+    $(elem).append("<span>" + val + " </span>");
+    $(elem).append('<input id="doneVal" type="hidden" value="' + isDone + '"/>');
+    $(elem).append('<div style="display: inline-flex;"><input id="cb1" type="checkbox" onclick="return false" checked=checked class="tick"/> <button id="xid" class="rem">X</button></div>');
+    return elem;
 }

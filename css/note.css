@@ -17,7 +17,7 @@ div #add:hover{
 }
 
 .rem {
-    background-color: white;
+    background-color: inherit;
     color: #D50000;
     font-weight:bold;
     border: none;
@@ -46,7 +46,7 @@ ol li:before {
 }
 
 .tasklist > li{
-   background-color:#fff;
+   /* background-color:#fff; */
    width:90%;
    /* display: flex; */
    /* flex-wrap:wrap; */
@@ -54,7 +54,7 @@ ol li:before {
    align-items:center;
    margin:10px  auto;
    /* padding:5px 10px; */
-   margin-left:-45px;
+   margin-left:-40px;
    display: inline-flex;
 }
 

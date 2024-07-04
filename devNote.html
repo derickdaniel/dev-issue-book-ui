@@ -4,6 +4,7 @@
 <head>
 <title>Index Page</title>
 <link rel="stylesheet" href="css/header.css" />
+<link rel="stylesheet" href="css/base.css" />
 <link rel="stylesheet" href="css/note.css" />
 </head>
 
@@ -19,13 +20,22 @@
 		<h1 align="left">
 			<span class="blink-text">></span> Developer Book 1.0
 		</h1>
-		<div>
+		<!-- <div>
 			<h4 align="right" style="display: table-row;">
 			    <i><span style="font-family: ui-serif;" id="userNameId"></span></i> <br><br>
 			    <a href="index.html">Home</a><br>
 				<a href="registerIssue.html">Register Issue</a><br>
 				<a href="#" onclick="logout()">Logout</a>
 			</h4>
+		</div> -->
+		<div class="dropdown">
+			<b><i><span id="userNameId"></span></i></b><br> 
+			<button class="dropbtn">Menu</button>
+			<div class="dropdown-content">
+				<a href="index.html">Home</a><br>
+				<a href="registerIssue.html">Register Issue</a><br>
+				<a href="#" onclick="logout()">Logout</a>
+			</div>
 		</div>
 	</div>
 
