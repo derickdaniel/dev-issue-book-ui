@@ -1,6 +1,5 @@
 $(document).ready(function() {
-	getTasks();
-	getTodaysTasks();
+	loadTasks();
 	$("#saveBtn").hide();
 
 	$("#add").on("click", function() { //hadle click and "Enter" event
@@ -18,7 +17,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$(document).on('click', ".rem", function() { //handle click on x button
+	$(document).on('click', "#xid", function() { //handle click on x button
 		$(this).parent().parent().remove(); //remove "current => this" object
 		if ($("#mylist li").length == 0) {
 			$("#saveBtn").hide();
@@ -78,7 +77,8 @@ function getTasks() {
 				v.forEach(function(task, index) {
 					elem += '<li id="'+ task.taskId +'">' + task.taskDesc + '</li>';
 					elem += '<input id="doneVal" type="hidden" value="' + task.completed + '"/>';
-					elem += '<div style="display: inline-flex;"><input id="cb1" type="checkbox" onclick="return false" checked=checked class="tick"/> <button id="xid" class="rem">X</button></div>';
+					elem +=
+ '<div style="display: inline-flex;"><input id="cb1" type="checkbox" onclick="return false" checked=checked class="tick"/> <button onclick=delTask("'+task.taskId +'") class="rem">X</button></div>';
 				});
 				elem += "</ul>"
 			});
@@ -106,9 +106,13 @@ function getTodaysTasks() {
 			console.log(response);
 			if (response.length > 0) {
 				$("#saveBtn").show();
+				$("#mylist").empty();
 				response.forEach(function(task, index) {
 					addNewTaskToList(task.taskId, task.taskDesc, task.completed);
 				});
+			} else {
+				$("#mylist").empty();
+				$("#saveBtn").hide();
 			}
 		},
 		error: function(response, error) {
@@ -147,4 +151,31 @@ function createTaskList(id, val, isDone) {
     $(elem).append('<input id="doneVal" type="hidden" value="' + isDone + '"/>');
     $(elem).append('<div style="display: inline-flex;"><input id="cb1" type="checkbox" onclick="return false" checked=checked class="tick"/> <button id="xid" class="rem">X</button></div>');
     return elem;
+}
+
+function delTask(taskId) {
+	debugger;
+	$.ajax({
+		type: "DELETE",
+		url: "http://localhost:8080/dib/tasks/" + taskId,
+		contentType: "application/json; charset=UTF-8",
+		/*		dataType: 'json',*/
+		headers: {
+			"Authorization": "Bearer " + localStorage.getItem('access-token'),
+		},
+		success: function(response) {
+			loadTasks();
+		},
+		error: function(response, error) {
+			console.log("request failed: " + response.status);
+			if (response.status == 401) {
+				location.href = "login.html";
+			}
+		}
+	});
+}
+
+function loadTasks() {
+	getTasks();
+	getTodaysTasks();
 }
