@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
 
 <head>
-<link rel="stylesheet" href="css/base.css" />
-<link rel="stylesheet" href="css/header.css" />
-<title>Index Page</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <title>Index Page</title>
 </head>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -12,66 +12,67 @@
 <script type="text/javascript" src="js/commons.js"></script>
 
 <body>
-	<div class="head">
-		<h1 align="left">
-			<span class="blink-text">></span> Developer's Issue Book
-		</h1>
-		<div class="dropdown">
-			<div><b><i><span id="userNameId"></span></i></b>&nbsp
-		    <img src="images/account.jpg" width="25px" height="25px" style="border-radius: 7px;"></img><br></div>
-			<button class="dropbtn">Menu</button>
-			<div class="dropdown-content">
-				<a href="index.html">Issue Book</a><br>
-				<a href="devNote.html">Task Book</a><br>
-				<a href="#" onclick="logout()">Logout</a>
-			</div>
-		</div>
-	</div>
-	
-	<br><br>
-	<div class="main" style="width: 500px; margin: 0 auto;">
-		<h2>Edit Issue</h2><br>
-		<form action="" method="post" id="editFormId">
+    <div class="head">
+        <h1 align="left">
+            <span class="blink-text">></span> Developer's Issue Book
+        </h1>
+        <div class="dropdown">
+            <div><b><i><span id="userNameId"></span></i></b>&nbsp
+                <img src="images/account.jpg" width="25px" height="25px" style="border-radius: 7px;" alt=""></img><br>
+            </div>
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="index.html">Issue Book</a><br> <a href="devNote.html">Task Book</a><br>
+                <a href="#" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </div>
 
-			<label for="id">Id:</label> <input type="text" id="id" name="id"
-				readonly="readonly" /> <label for="issueDesc">Issue
-				Description:</label> <input type="text" id="issueDesc" name="issueDesc"
-				required /> <label for="issueType">Issue Type:</label> <select
-				id="issueType" name="issueType" required>
-				<option value="Code">Code</option>
-				<option value="Configuration">Configuration</option>
-				<option value="API call">API call</option>
-				<option value="DataBase">DataBase</option>
-				<option value="Environment">Environment</option>
-				<option value="UI">UI</option>
-				<option value=Other>Other</option>
-			</select> <label for="rootCause">Root Cause:</label> <input type="text"
-				id="rootCause" name="rootCause" /> <label
-				style="display: inline-block"> <span
-				style="vertical-align: middle"> Resolved </span> <input
-				type="checkbox" id="resolved" name="resolved" class="tick" />
-			</label> <br> <br> <label for="resolution">Resolution:</label> <input
-				type="text" id="resolution" name="resolution" /> <label
-				for="references">References:</label> <input type="text"
-				id="references" name="references" /> <label for="tags">Tags:</label>
-			<input type="text" id="tags" name="tags" /> <br> <br>
-			
-			<input type="hidden" name="hid" id="createdAt" value= "createdAt">
-			
-			<div align="center">
-				<button id="submitButton" type="submit">Update</button>
-				&emsp; &emsp; &emsp; &emsp; &emsp;
-				<button id="backButton" type="submit" onclick="home();">Back</button>
-			</div>
-		</form>
-	</div>
-	
-	<br><br>
-	<footer>
-		<span class="blink-text">></span>
-	</footer>
+    <br><br>
+    <div class="main" style="width: 500px; margin: 0 auto;">
+        <h2>Edit Issue</h2><br>
+        <form action="" method="post" id="editFormId">
+
+            <label for="id">Id:</label> <input type="text" id="id" name="id" disabled/>
+            <label for="issueDesc">Issue Description:</label>
+            <input type="text" id="issueDesc" name="issueDesc" required> <label for="issueType">Issue Type:</label>
+            <select id="issueType" name="issueType" required>
+                <option value="Code">Code</option>
+                <option value="Configuration">Configuration</option>
+                <option value="API call">API call</option>
+                <option value="DataBase">DataBase</option>
+                <option value="Environment">Environment</option>
+                <option value="UI">UI</option>
+                <option value=Other>Other</option>
+            </select>
+
+            <label for="rootCause">Root Cause:</label> <input type="text"
+                                                              id="rootCause" name="rootCause"/> <label
+                style="display: inline-block"> <span
+                style="vertical-align: middle"> Resolved </span> <input
+                type="checkbox" id="resolved" name="resolved" class="tick"/> </label> <br> <br>
+            <label for="resolution">Resolution:</label> <input
+                type="text" id="resolution" name="resolution"/> <label
+                for="references">References:</label> <input type="text"
+                                                            id="references" name="references"/> <label
+                for="tags">Tags:</label> <input type="text" id="tags" name="tags"/>
+
+            <label for="createdAt">Created Date:</label> <input type="text" id="createdAt" name="id" disabled/>
+
+            <!--<input type="hidden" name="hid" id="createdAt" value="createdAt">-->
+            <br> <br>
+            <div align="center">
+                <button id="submitButton" type="submit">Update</button>
+                &emsp; &emsp; &emsp; &emsp; &emsp;
+                <button id="backButton" type="submit" onclick="home();">Back</button>
+            </div>
+        </form>
+    </div>
+
+    <br><br>
+    <footer>
+        <span class="blink-text">></span>
+    </footer>
+
 </body>
-</body>
-
-
 </html>
