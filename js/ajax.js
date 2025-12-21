@@ -64,7 +64,7 @@ $(document).ready(function() {
 					if (row.references != undefined && row.references.length > 0) {
 						let refs = [];
 						$.each(row.references, function(i, ref) {
-							refs[i] = '<a href="' + ref + '">' + "reference-" + (i + 1) + "\n" + '</a>';
+							refs[i] = '<a href="' + ref + '">' + "ref-" + (i + 1) + "\n" + '</a>';
 						});
 						$row.append($('<td/>').html(refs));
 					} else {

@@ -25,7 +25,8 @@ $(document).ready(function() {
 				localStorage.setItem("user-name", data.username);
 				localStorage.setItem("role", data.roles);
 				
-				alert("Welcome " + localStorage.getItem("user-name"));
+				//alert("Welcome " + localStorage.getItem("user-name"));
+				console.log("Welcome " + localStorage.getItem("user-name"));
 				location.href = "index.html";
 			},
 			error: function(data) {
