@@ -23,6 +23,7 @@ $(document).ready(function() {
 				localStorage.setItem("access-token", data.token);
 				localStorage.setItem("refresh-token", data.refreshToken);
 				localStorage.setItem("user-name", data.username);
+				localStorage.setItem("user-id", data.id);
 				localStorage.setItem("role", data.roles);
 				
 				//alert("Welcome " + localStorage.getItem("user-name"));
