@@ -23,7 +23,16 @@ $(document).ready(function() {
 			$("#resolved").prop('checked', isResolved)
 
 			jsonArray($("#references").val(response.refs));
-			/*jsonArray($("#tags").val(response.tags));*/
+
+            var tags = response.tags;
+            var tagMkr = '';
+            if (tags != undefined && tags.length > 0) {
+        	$.each(tags, function(i, tag) {
+            	tagMkr = tagMkr + tag.name + ", ";
+        	});
+            }
+            $("#tags").val(tagMkr);
+
 		},
 		error: function(response) {
 			console.log("request failed: " + response.status);
@@ -52,7 +61,7 @@ $(document).ready(function() {
 		obj.resolved = isResolved;
 		console.log(obj.resolved);
 		obj.references = jsonArray($("#references").val());
-		//obj.tags = jsonArray($("#tags").val());
+		obj.tagsStr = $("#tags").val()
 
 		var jsonData = JSON.stringify(obj);
 		console.log(jsonData);

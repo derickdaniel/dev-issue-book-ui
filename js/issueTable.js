@@ -9,6 +9,7 @@ $(document).ready(function() {
 		},
 		success: function(response) {
 
+            console.log(response);
 			if (response.length > 0) {
 				var $data = $('<table id="mytable" border="2" cellspacing="0" cellpadding="5" width="1400"></table>');
 				var header = "<thead><tr><th>Id</th><th>Issue Type</th><th>Issue Description</th><th>Root Cause</th><th>Resolved</th><th>Resolution</th><th>Tags</th><th>Refs</th><th>CreatedAt</th><th>Action</th></tr></thead>";
@@ -53,9 +54,10 @@ $(document).ready(function() {
 					$row.append($hidden);
 
 					var tags = "";
+					var color = "";
 					if (row.tags != undefined && row.tags.length > 0) {
 						$.each(row.tags, function(i, tag) {
-							tags += tag + ", ";
+							tags +=  '<span style="color: '+ tag.color +' ";>' + tag.name + '<span>' + ", ";
 						});
 						$row.append($('<td/>').html(tags));
 					} else {
@@ -113,8 +115,6 @@ $(document).ready(function() {
 						logout();
 					}
 				});
-
-
 			}
 		}
 	});
