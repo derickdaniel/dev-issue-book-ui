@@ -16,7 +16,7 @@ $(document).ready(function() {
 		console.log(obj.resolved);
 		obj.refs = $("#references").val();
 		//obj.refs = jsonArray($("#references").val());
-		obj.tags = $("#tags").val();
+		obj.tagsStr = $("#tags").val();
 
 		var jsonData = JSON.stringify(obj);
 		console.log(jsonData);
